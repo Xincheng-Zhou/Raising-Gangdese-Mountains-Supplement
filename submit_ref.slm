@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --chdir=/data/gpfs/assoc/lithospheric_dynamics/Zenodo
+#SBATCH --output=/data/gpfs/assoc/lithospheric_dynamics/Zenodo/slurm-%j.out
+#SBATCH --error=/data/gpfs/assoc/lithospheric_dynamics/Zenodo/slurm-%j.err
+#SBATCH --job-name=Ref
+#SBATCH --time=48:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --hint=compute_bound
+#SBATCH --mem-per-cpu=3500
+#SBATCH --account=cpu-s2-lithospheric_dynamics-0
+#SBATCH --partition=cpu-s2-core-0
+#SBATCH --mail-type=END,FAIL
+
+julia /data/gpfs/assoc/lithospheric_dynamics/Zenodo/Ref.jl
